@@ -1,0 +1,32 @@
+.character-container {
+    position: absolute;
+    /* Change to absolute positioning */
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.character-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Hover and Blur Effects */
+.character-container.hovered {
+    z-index: 1;
+    transform: scale(1.1);
+    transform-origin: center;
+}
+
+.character-container.blurred {
+    filter: blur(4px) brightness(0.8);
+}
+
+/* Ensure the parent container has position: relative */
+@media (max-width: 600px) {
+    .character-container {
+        left: calc(var(--x) * 0.8);
+        /* Adjust positions */
+        top: calc(var(--y) * 0.8);
+    }
+}
